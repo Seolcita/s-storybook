@@ -1,0 +1,31 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
+import * as SelectStories from './Select.stories.tsx';
+
+<Meta title='Components/Atomic/Select' of={SelectStories} />
+
+## Overview
+
+Select components are used for collecting user provided information from a list of options.
+
+<Canvas>
+  <Story of={SelectStories.Default} />
+</Canvas>
+
+## Props
+
+<Controls include={['fullWidth', 'width', 'color']} />
+
+## Variants
+
+<br />
+### Single Select
+
+<Canvas>
+  <Story of={SelectStories.Default} />
+</Canvas>
+
+### Full Width
+
+<Canvas>
+  <Story of={SelectStories.FullWidth} />
+</Canvas>

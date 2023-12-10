@@ -1,0 +1,43 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
+import * as CardStories from './Card.stories.tsx';
+
+<Meta title='Components/Atomic/Card' of={CardStories} />
+
+## Overview
+
+Card is container for other components.
+
+<Canvas>
+  <Story of={CardStories.Padded} />
+</Canvas>
+
+## Props
+
+<Controls include={['isInteractive', 'isPadded']} />
+
+## Variants
+
+<br />
+### Padded
+
+<Canvas>
+  <Story of={CardStories.Padded} />
+</Canvas>
+
+### Not Padded
+
+<Canvas>
+  <Story of={CardStories.NonPadded} />
+</Canvas>
+
+### Interactive
+
+<Canvas>
+  <Story of={CardStories.Interactive} />
+</Canvas>
+
+### Not Interactive
+
+<Canvas>
+  <Story of={CardStories.NonInteractive} />
+</Canvas>

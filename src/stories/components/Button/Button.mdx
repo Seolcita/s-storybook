@@ -1,0 +1,73 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories.tsx';
+
+<Meta title='Components/Atomic/Button' of={ButtonStories} />
+
+## Overview
+
+Buttons allow users to take actions, and make choices, with a single click/tap.
+
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+</Canvas>
+
+## Props
+
+<Controls include={['bgColor', 'textColor', 'size', 'disabled']} />
+
+## Variants
+
+<br />
+### Active
+
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+  <Story of={ButtonStories.Outlined} />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story of={ButtonStories.PrimaryDisabled} />
+  <Story of={ButtonStories.OutlinedDisabled} />
+</Canvas>
+
+### Sizes
+
+<Canvas>
+  <Story of={ButtonStories.ExtraSmall} />
+  <Story of={ButtonStories.Small} />
+  <Story of={ButtonStories.Medium} />
+  <Story of={ButtonStories.Large} />
+  <Story of={ButtonStories.ExtraLarge} />
+</Canvas>
+
+### Full Width
+
+<Canvas>
+  <Story of={ButtonStories.FullWidth} />
+</Canvas>
+
+### Primary Buttons with Color
+
+<Canvas>
+  <Story of={ButtonStories.PrimaryButtonColorPrimary} />
+  <Story of={ButtonStories.PrimaryButtonColorSuccess} />
+  <Story of={ButtonStories.PrimaryButtonColorWarning} />
+  <Story of={ButtonStories.PrimaryButtonColorError} />
+  <Story of={ButtonStories.PrimaryButtonColorGrey} />
+  <Story of={ButtonStories.PrimaryButtonColorBlack} />
+  <Story of={ButtonStories.PrimaryButtonColorWhite} />
+</Canvas>
+
+### Outlined Buttons with Color
+
+<Canvas>
+  <Story of={ButtonStories.OutlinedButtonColorPrimary} />
+  <Story of={ButtonStories.OutlinedButtonColorSuccess} />
+  <Story of={ButtonStories.OutlinedButtonColorWarning} />
+  <Story of={ButtonStories.OutlinedButtonColorError} />
+  <Story of={ButtonStories.OutlinedButtonColorGrey} />
+  <Story of={ButtonStories.OutlinedButtonColorBlack} />
+  <Story of={ButtonStories.OutlinedButtonColorWhite} />
+</Canvas>

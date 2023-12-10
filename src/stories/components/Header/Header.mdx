@@ -1,0 +1,49 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
+import * as HeaderStories from './Header.stories.tsx';
+
+<Meta title='Components/Composite/Header' of={HeaderStories} />
+
+## Overview
+
+Header provides content and actions related to the current screen. It's used for branding, navigation, and actions.
+
+<Canvas>
+  <Story of={HeaderStories.Default} />
+</Canvas>
+
+## Props
+
+<Controls
+  include={[
+    'isLogin',
+    'isMobile',
+    'bgColor',
+    'loginButton',
+    'logo',
+    'leftMenus',
+    'rightMenus',
+  ]}
+/>
+
+## Variants
+
+<br />
+### Default With Logged in status
+
+<Canvas>
+  <Story of={HeaderStories.Default} />
+</Canvas>
+
+### Default With Logged out Status
+
+<Canvas>
+  <Story of={HeaderStories.LogoutStatus} />
+</Canvas>
+
+### Mobile
+
+Left menu is only visible in screen size below 600px
+
+<Canvas>
+  <Story of={HeaderStories.Mobile} />
+</Canvas>

@@ -1,0 +1,54 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
+import * as TypographyStories from './Typography.stories.tsx';
+
+<Meta title='Components/Atomic/Typography' of={TypographyStories} />
+
+## Overview
+
+Typography has variants for heading and text. Font weight and color can be modified.
+
+<Canvas>
+  <Story of={TypographyStories.HeadingXXL} />
+</Canvas>
+
+## Props
+
+<Controls include={['variant', 'fontWeight', 'color']} />
+
+## Variants
+
+<br />
+### Headings
+
+<Canvas>
+  <Story of={TypographyStories.HeadingXXL} />
+  <Story of={TypographyStories.HeadingXL} />
+  <Story of={TypographyStories.HeadingL} />
+  <Story of={TypographyStories.HeadingM} />
+  <Story of={TypographyStories.HeadingS} />
+  <Story of={TypographyStories.HeadingXS} />
+</Canvas>
+
+### Texts
+
+<Canvas>
+  <Story of={TypographyStories.TextXL} />
+  <Story of={TypographyStories.TextL} />
+  <Story of={TypographyStories.TextM} />
+  <Story of={TypographyStories.TextS} />
+  <Story of={TypographyStories.TextXS} />
+</Canvas>
+
+## Font Weights
+
+<Canvas>
+  <Story of={TypographyStories.FontWeightThin} />
+  <Story of={TypographyStories.FontWeightExtraLight} />
+  <Story of={TypographyStories.FontWeightLight} />
+  <Story of={TypographyStories.FontWeightNormal} />
+  <Story of={TypographyStories.FontWeightMedium} />
+  <Story of={TypographyStories.FontWeightSemiBold} />
+  <Story of={TypographyStories.FontWeightBold} />
+  <Story of={TypographyStories.FontWeightExtraBold} />
+  <Story of={TypographyStories.FontWeightHeavy} />
+</Canvas>
