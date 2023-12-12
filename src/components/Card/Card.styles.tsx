@@ -8,8 +8,8 @@ export interface StyledCardProps {
   isPadded: CardProps['isPadded'];
 }
 
-export const fixedBoxShadow = `0.4rem 0.5rem 0.5rem ${ColorMap['grey'].extraLight}`;
-export const fixedBackgroundColor = ColorMap['white'].main;
+const fixedBoxShadow = `0.3rem 0.35rem 0.5rem ${ColorMap['grey'].light}`;
+const fixedBackgroundColor = ColorMap['white'].main;
 
 export const StyledCard = styled.div<StyledCardProps>`
   padding: ${({ isPadded }) => (isPadded ? space.md : space.none)};
@@ -19,22 +19,28 @@ export const StyledCard = styled.div<StyledCardProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms ease;
+  border-radius: 0.5rem;
 
   &:hover {
     box-shadow: ${({ isInteractive }) =>
       isInteractive
-        ? `0.6rem 0.7rem 0.6rem ${ColorMap['grey'].extraLight}`
+        ? `0.4rem 0.5rem 0.65rem ${ColorMap['grey'].light}`
         : fixedBoxShadow};
     background-color: ${({ isInteractive }) =>
-      isInteractive ? ColorMap['grey'].extraLight : fixedBackgroundColor}40;
+      isInteractive
+        ? `${ColorMap['grey'].extraLight}1A`
+        : fixedBackgroundColor};
   }
 
   &:active {
     box-shadow: ${({ isInteractive }) =>
       isInteractive
-        ? `0.3rem 0.4rem 0.4rem ${ColorMap['grey'].extraLight}`
+        ? `0.3rem 0.4rem 0.4rem ${ColorMap['grey'].light}`
         : fixedBoxShadow};
     background-color: ${({ isInteractive }) =>
-      isInteractive ? ColorMap['grey'].extraLight : fixedBackgroundColor}70;
+      isInteractive
+        ? `${ColorMap['grey'].extraLight}80`
+        : fixedBackgroundColor};
   }
 `;
