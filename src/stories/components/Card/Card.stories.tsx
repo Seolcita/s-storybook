@@ -21,6 +21,8 @@ export const Padded: Story = {
     isPadded: true,
     tabIndex: 0,
     ariaLabel: 'ARIA-Label',
+    width: 35,
+    margin: 'xl',
     children: placeholder,
   },
 };

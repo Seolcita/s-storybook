@@ -31,7 +31,7 @@ export default [
         sourceMap: true,
         inlineSources: true,
       }),
-      resolve(),
+      resolve({ browser: true }),
       commonjs(),
       postcss({
         plugins: [],
