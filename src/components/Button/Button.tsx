@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { KeyboardEvent, useState } from 'react';
 import { type ReactElement } from 'react';
 
 import buttonTokens, { ButtonSizeProperties } from '../../tokens/button-token';
 import { StyledButton } from './Button.styles';
 import ColorMap, { Colors } from '../Color/ColorMap';
+import { setSpaceInput, setSpacing } from '../../helper/setSpacing';
 
 export type ButtonVariant = 'primary' | 'outlined';
 export type ButtonSize = 'xs' | 's' | 'm' | 'l' | 'xl';
@@ -25,6 +26,8 @@ export interface ButtonProps {
   disabled?: boolean;
   children: React.ReactNode;
   onClick?: React.MouseEventHandler;
+  margin?: setSpaceInput;
+  ariaLabel: string;
 }
 
 const Button = ({
@@ -34,9 +37,13 @@ const Button = ({
   size = 'm',
   fullWidth = false,
   disabled = false,
+  margin,
+  ariaLabel,
   onClick,
   children,
 }: ButtonProps): ReactElement => {
+  const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
+
   return (
     <StyledButton
       variant={variant}
@@ -46,6 +53,8 @@ const Button = ({
       fullWidth={fullWidth}
       disabled={disabled}
       onClick={onClick}
+      margin={formattedMargin}
+      aria-label={ariaLabel}
     >
       {children}
     </StyledButton>

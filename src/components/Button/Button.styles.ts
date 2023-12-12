@@ -10,9 +10,11 @@ export interface StyledButtonProps {
   size: ButtonSizeProperties;
   fullWidth: ButtonProps['fullWidth'];
   disabled: ButtonProps['disabled'];
+  margin: string;
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,15 +27,17 @@ export const StyledButton = styled.button<StyledButtonProps>`
   color: ${({ textColor }) => textColor.main};
   box-shadow: ${({ variant, bgColor, textColor }) =>
     variant === 'primary'
-      ? `0.3rem 0.4rem 0.4rem ${bgColor.main}80`
-      : `0.3rem 0.4rem 0.4rem ${textColor.main}80`};
-  margin: ${({ size }) => size.margin};
+      ? `0.2rem 0.3rem 0.3rem ${bgColor.main}80`
+      : `0.2rem 0.3rem 0.3rem ${textColor.main}80`};
+  margin: ${({ margin }) => margin};
   padding: ${({ size }) => size.padding};
   font-size: ${({ size }) => size.fontSize};
   height: ${({ size }) => size.heigh};
   font-weight: ${({ size }) => size.fontWeight};
   line-height: ${({ size }) => size.lineHeight};
   letter-spacing: 0.03rem;
+  overflow: hidden;
+  transition: background-color 250ms ease;
   ${({ fullWidth }) =>
     fullWidth &&
     css`
@@ -42,11 +46,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     background-color: ${({ variant, bgColor }) =>
-      variant === 'primary' ? bgColor.dark : 'transparent'};
+      variant === 'primary' ? bgColor.dark : ColorMap['grey'].extraLight};
     box-shadow: ${({ variant, bgColor, textColor }) =>
       variant === 'primary'
-        ? `0.6rem 0.6rem 0.8rem ${bgColor.main}80`
-        : `0.6rem 0.6rem 0.8rem ${textColor.main}80`};
+        ? `0.25rem 0.4rem 0.5rem ${bgColor.main}80`
+        : `0.25rem 0.4rem 0.5rem ${textColor.main}80`};
   }
 
   &:active {
@@ -55,6 +59,48 @@ export const StyledButton = styled.button<StyledButtonProps>`
         ? `0.2rem 0.3rem 0.3rem ${bgColor.main}E6`
         : `0.2rem 0.3rem 0.3rem ${textColor.main}E6`};
     transform: scale(0.98);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: ${({ variant }) =>
+      variant === 'primary'
+        ? `${ColorMap['grey'].light}59`
+        : `${ColorMap['grey'].light}4D`};
+    z-index: ${({ variant }) => (variant === 'primary' ? 1 : -1)};
+    border-radius: 1rem;
+    transition: all 0.5s;
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  &:focus:before {
+    bottom: -20%;
+    height: 140%;
+    animation: pulse 2s infinite;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.75);
+    }
+
+    70% {
+      transform: scale(0.8);
+    }
+
+    100% {
+      transform: scale(0.75);
+    }
   }
 
   ${({ disabled }) =>
