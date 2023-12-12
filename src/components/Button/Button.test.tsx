@@ -6,7 +6,7 @@ import Button from './Button';
 describe('Button', () => {
   test('renders the Button component', () => {
     render(
-      <Button size='xl' textColor='white'>
+      <Button size='xl' textColor='white' ariaLabel='ARIA-label'>
         Button
       </Button>
     );

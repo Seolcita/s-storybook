@@ -13,12 +13,16 @@ export default meta;
 
 type Story = StoryObj<typeof Card>;
 
-const placeholder = <Placeholder isFullWidth />;
+const placeholder = <Placeholder isFullWidth color='warning' />;
 
 export const Padded: Story = {
   args: {
     isInteractive: false,
     isPadded: true,
+    tabIndex: 0,
+    ariaLabel: 'ARIA-Label',
+    width: 35,
+    margin: 'xl',
     children: placeholder,
   },
 };
@@ -27,6 +31,8 @@ export const NonPadded: Story = {
   args: {
     isInteractive: false,
     isPadded: false,
+    tabIndex: 0,
+    ariaLabel: 'ARIA-Label',
     children: placeholder,
   },
 };
@@ -35,6 +41,8 @@ export const Interactive: Story = {
   args: {
     isInteractive: true,
     isPadded: true,
+    tabIndex: 0,
+    ariaLabel: 'ARIA-Label',
     children: placeholder,
   },
 };
@@ -43,6 +51,8 @@ export const NonInteractive: Story = {
   args: {
     isInteractive: false,
     isPadded: true,
+    tabIndex: 0,
+    ariaLabel: 'ARIA-Label',
     children: placeholder,
   },
 };
