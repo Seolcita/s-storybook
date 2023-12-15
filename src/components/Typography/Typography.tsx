@@ -4,6 +4,7 @@ import typographyTokens, {
   TypographyBasicProperties,
 } from '../../tokens/typography-token';
 import ColorMap, { Colors } from '../Color/ColorMap';
+import { setSpaceInput, setSpacing } from '../../helper/setSpacing';
 
 export type TypographyVariant =
   | 'headingXXL'
@@ -34,6 +35,7 @@ export interface TypographyProps {
   variant: TypographyVariant;
   fontWeight?: FontWeight;
   color?: Colors;
+  margin?: setSpaceInput;
 }
 
 export interface TypographyStyleProperties extends TypographyBasicProperties {
@@ -107,16 +109,18 @@ const Typography = ({
   variant,
   fontWeight = 'normal',
   color = 'black',
+  margin,
 }: TypographyProps): ReactElement => {
   const weight = FontWeightMap[fontWeight];
   const typography = TypographyVariantMap[variant];
+  const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
   const customStyle = {
     fontFamily: typography.fontFamily,
     fontSize: typography.fontSize,
     lineHeight: typography.lineHeight,
     fontWeight: weight,
     color: ColorMap[color].main,
-    margin: 0,
+    margin: formattedMargin,
     padding: 0,
   };
   const tag = getTag({ variant, children, customStyle });
