@@ -1,9 +1,6 @@
 {
-  "name": "@seolcita/s-storybook",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/seolcita"
-  },
-  "version": "0.0.6",
+  "name": "sk-storybook",
+  "version": "0.0.2",
   "description": "A React component library",
   "scripts": {
     "rollup": "rollup -c",
