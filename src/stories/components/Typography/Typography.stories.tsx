@@ -16,6 +16,7 @@ export const HeadingXXL: Story = {
     variant: 'headingXXL',
     fontWeight: 'normal',
     children: 'HeadingXXL',
+    margin: 'lg',
   },
 };
 

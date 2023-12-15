@@ -19,7 +19,6 @@ export const StyledCard = styled.div<StyledCardProps>`
   padding: ${({ isPadded }) => (isPadded ? space.lg : space.none)};
   background-color: ${fixedBackgroundColor};
   box-shadow: ${fixedBoxShadow};
-  min-width: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
