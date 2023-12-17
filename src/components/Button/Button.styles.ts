@@ -4,13 +4,15 @@ import ColorMap, { ColorVariant } from '../Color/ColorMap';
 import { ButtonSizeProperties } from '../../tokens/button-token';
 
 export interface StyledButtonProps {
-  variant: ButtonProps['variant'];
-  bgColor: ColorVariant;
-  textColor: ColorVariant;
-  size: ButtonSizeProperties;
-  fullWidth: ButtonProps['fullWidth'];
+  $variant: ButtonProps['variant'];
+  $bgColor: ColorVariant;
+  $textColor: ColorVariant;
+  $size: ButtonSizeProperties;
+  $fullWidth: ButtonProps['fullWidth'];
   disabled: ButtonProps['disabled'];
-  margin: string;
+  $margin: string;
+  $hasShadow: ButtonProps['hasShadow'];
+  borderRadius: ButtonProps['borderRadius'];
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -18,46 +20,52 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ variant, bgColor }) =>
-    variant === 'primary' ? bgColor.main : 'transparent'};
+  background-color: ${({ $variant, $bgColor }) =>
+    $variant === 'primary' ? $bgColor.main : 'transparent'};
 
-  border: ${({ variant, textColor }) =>
-    variant === 'primary' ? 'none' : `0.25rem solid ${textColor.main}`};
-  border-radius: 0.5rem;
-  color: ${({ textColor }) => textColor.main};
-  box-shadow: ${({ variant, bgColor, textColor }) =>
-    variant === 'primary'
-      ? `0.2rem 0.3rem 0.3rem ${bgColor.main}80`
-      : `0.2rem 0.3rem 0.3rem ${textColor.main}80`};
-  margin: ${({ margin }) => margin};
-  padding: ${({ size }) => size.padding};
-  font-size: ${({ size }) => size.fontSize};
-  height: ${({ size }) => size.heigh};
-  font-weight: ${({ size }) => size.fontWeight};
-  line-height: ${({ size }) => size.lineHeight};
+  border: ${({ $variant, $textColor }) =>
+    $variant === 'primary' ? 'none' : `0.25rem solid ${$textColor.main}`};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  color: ${({ $textColor }) => $textColor.main};
+  box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
+    $hasShadow
+      ? $variant === 'primary'
+        ? `0.3rem 0.4rem 0.5rem ${$bgColor.main}80`
+        : `0.3rem 0.4rem 0.5rem ${$textColor.main}80`
+      : 'none'};
+  margin: ${({ $margin }) => $margin};
+  padding: ${({ $size }) => $size.padding};
+  font-size: ${({ $size }) => $size.fontSize};
+  height: ${({ $size }) => $size.heigh};
+  font-weight: ${({ $size }) => $size.fontWeight};
+  line-height: ${({ $size }) => $size.lineHeight};
   letter-spacing: 0.03rem;
   overflow: hidden;
   transition: background-color 250ms ease;
-  ${({ fullWidth }) =>
-    fullWidth &&
+  ${({ $fullWidth }) =>
+    $fullWidth &&
     css`
       width: 100%;
     `};
 
   &:hover {
-    background-color: ${({ variant, bgColor }) =>
-      variant === 'primary' ? bgColor.dark : ColorMap['grey'].extraLight};
-    box-shadow: ${({ variant, bgColor, textColor }) =>
-      variant === 'primary'
-        ? `0.25rem 0.4rem 0.5rem ${bgColor.main}80`
-        : `0.25rem 0.4rem 0.5rem ${textColor.main}80`};
+    background-color: ${({ $variant, $bgColor }) =>
+      $variant === 'primary' ? $bgColor.dark : ColorMap['grey'].extraLight};
+    box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
+      $hasShadow
+        ? $variant === 'primary'
+          ? `0.4rem 0.6rem 0.6rem ${$bgColor.main}80`
+          : `0.4rem 0.6rem 0.6rem ${$textColor.main}80`
+        : 'none'};
   }
 
   &:active {
-    box-shadow: ${({ variant, bgColor, textColor }) =>
-      variant === 'primary'
-        ? `0.2rem 0.3rem 0.3rem ${bgColor.main}E6`
-        : `0.2rem 0.3rem 0.3rem ${textColor.main}E6`};
+    box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
+      $hasShadow
+        ? $variant === 'primary'
+          ? `0.2rem 0.3rem 0.3rem ${$bgColor.main}E6`
+          : `0.2rem 0.3rem 0.3rem ${$textColor.main}E6`
+        : 'none'};
     transform: scale(0.98);
   }
 
@@ -68,11 +76,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
     left: 0%;
     width: 100%;
     height: 100%;
-    background-color: ${({ variant }) =>
-      variant === 'primary'
+    background-color: ${({ $variant }) =>
+      $variant === 'primary'
         ? `${ColorMap['grey'].light}59`
         : `${ColorMap['grey'].light}4D`};
-    z-index: ${({ variant }) => (variant === 'primary' ? 1 : -1)};
+    z-index: ${({ $variant }) => ($variant === 'primary' ? 1 : -1)};
     border-radius: 1rem;
     transition: all 0.5s;
     transform: scale(0);
@@ -83,10 +91,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
     bottom: -20%;
     height: 140%;
     animation: pulse 2s infinite;
-  }
-
-  &:focus {
-    outline: none;
   }
 
   @keyframes pulse {
@@ -118,9 +122,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
       }
     `}
 
-  ${({ disabled, variant }) =>
+  ${({ disabled, $variant }) =>
     disabled &&
-    variant === 'outlined' &&
+    $variant === 'outlined' &&
     css`
       background-color: transparent;
       border-color: ${ColorMap['grey'].extraLight};

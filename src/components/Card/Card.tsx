@@ -27,12 +27,12 @@ const Card = ({
   const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
   return (
     <StyledCard
-      isInteractive={isInteractive}
-      isPadded={isPadded}
+      $isInteractive={isInteractive}
+      $isPadded={isPadded}
       tabIndex={tabIndex}
       width={width}
       height={height}
-      margin={formattedMargin}
+      $margin={formattedMargin}
       aria-label={ariaLabel}
     >
       {children}

@@ -40,6 +40,7 @@ export const Primary: Story = {
     margin: ['xl', 'md'],
     children: 'Button',
     ariaLabel: 'ARIA-Label',
+    hasShadow: true,
   },
 };
 
@@ -70,6 +71,26 @@ export const OutlinedDisabled: Story = {
     textColor: 'white',
     children: 'Button',
     ariaLabel: 'ARIA-Label',
+  },
+};
+
+// Box Shadow
+export const WithoutBoxShadow: Story = {
+  args: {
+    textColor: 'white',
+    children: 'Button',
+    ariaLabel: 'ARIA-Label',
+    hasShadow: false,
+  },
+};
+
+// Border Radius
+export const CustomBorderRadius: Story = {
+  args: {
+    textColor: 'white',
+    children: 'Button',
+    ariaLabel: 'ARIA-Label',
+    borderRadius: '3rem',
   },
 };
 

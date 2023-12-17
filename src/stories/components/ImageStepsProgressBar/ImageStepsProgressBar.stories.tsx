@@ -1,9 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
-// import dogImage from '../../../../src/assets/dog.png';
-// import poopImage from '../../../../src/assets/poop.png';
-// import boneImage from '../../../../src/assets/cookie.jpeg';
 import ImageStepsProgressBar from '../../../components/ImageStepsProgressBar';
 
 const meta: Meta<typeof ImageStepsProgressBar> = {
@@ -26,10 +23,11 @@ export default meta;
 const prevImg = (
   <div
     style={{
-      width: '40px',
+      width: '30px',
       height: '30px',
       marginTop: '30px',
       marginRight: '15px',
+      borderRadius: '50%',
       backgroundColor: 'pink',
     }}
   />
@@ -38,9 +36,10 @@ const prevImg = (
 const currentImg = (
   <div
     style={{
-      width: '90px',
+      width: '70px',
       height: '70px',
       marginRight: '10px',
+      borderRadius: '50%',
       backgroundColor: 'black',
     }}
   />
@@ -49,9 +48,10 @@ const currentImg = (
 const nextImg = (
   <div
     style={{
-      width: '50px',
+      width: '30px',
+      height: '30px',
       marginRight: '30px',
-      rotate: '-40deg',
+      borderRadius: '50%',
       backgroundColor: 'skyblue',
     }}
   />

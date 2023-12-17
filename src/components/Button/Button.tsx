@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, useState } from 'react';
+import React from 'react';
 import { type ReactElement } from 'react';
 
 import buttonTokens, { ButtonSizeProperties } from '../../tokens/button-token';
@@ -27,6 +27,8 @@ export interface ButtonProps {
   children: React.ReactNode;
   onClick?: React.MouseEventHandler;
   margin?: setSpaceInput;
+  hasShadow?: boolean;
+  borderRadius?: string;
   ariaLabel: string;
 }
 
@@ -38,6 +40,8 @@ const Button = ({
   fullWidth = false,
   disabled = false,
   margin,
+  hasShadow = true,
+  borderRadius = '0.5rem',
   ariaLabel,
   onClick,
   children,
@@ -46,15 +50,17 @@ const Button = ({
 
   return (
     <StyledButton
-      variant={variant}
-      bgColor={ColorMap[bgColor]}
-      textColor={ColorMap[textColor]}
-      size={ButtonSizeMap[size]}
-      fullWidth={fullWidth}
+      $variant={variant}
+      $bgColor={ColorMap[bgColor]}
+      $textColor={ColorMap[textColor]}
+      $size={ButtonSizeMap[size]}
+      $fullWidth={fullWidth}
       disabled={disabled}
       onClick={onClick}
-      margin={formattedMargin}
+      $margin={formattedMargin}
       aria-label={ariaLabel}
+      $hasShadow={hasShadow}
+      borderRadius={borderRadius}
     >
       {children}
     </StyledButton>
