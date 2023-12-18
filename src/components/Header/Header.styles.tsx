@@ -3,20 +3,20 @@ import { HeaderProps } from '.';
 import ColorMap from '../Color/ColorMap';
 
 export type StyledHeaderProps = {
-  bgColor: HeaderProps['bgColor'];
+  $bgColor: HeaderProps['bgColor'];
 };
 
 export type LeftContainerProps = {
-  isMobile: HeaderProps['isMobile'];
+  $isMobile: HeaderProps['isMobile'];
 };
 
 export type LogoProps = {
-  isMobile: HeaderProps['isMobile'];
+  $isMobile: HeaderProps['isMobile'];
 };
 
 export const StyledHeader = styled.div<StyledHeaderProps>`
-  background-color: ${({ bgColor }) =>
-    bgColor ? ColorMap[bgColor].main : 'transparent'};
+  background-color: ${({ $bgColor }) =>
+    $bgColor ? ColorMap[$bgColor].main : 'transparent'};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -30,8 +30,8 @@ export const LeftContainer = styled.div<LeftContainerProps>`
   flex-grow: 1;
   align-items: center;
 
-  ${({ isMobile }) =>
-    isMobile &&
+  ${({ $isMobile }) =>
+    $isMobile &&
     css`
       flex-direction: row-reverse;
     `}
@@ -43,8 +43,8 @@ export const RightContainer = styled.div`
 `;
 
 export const Logo = styled.div<LogoProps>`
-  ${({ isMobile }) =>
-    isMobile &&
+  ${({ $isMobile }) =>
+    $isMobile &&
     css`
       flex-grow: 1;
     `}

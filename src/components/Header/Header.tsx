@@ -29,9 +29,9 @@ const Header = ({
   loginButton,
 }: HeaderProps): ReactElement => {
   return (
-    <StyledHeader bgColor={bgColor}>
-      <LeftContainer isMobile={isMobile}>
-        <Logo isMobile={isMobile}>{logo}</Logo>
+    <StyledHeader $bgColor={bgColor}>
+      <LeftContainer $isMobile={isMobile}>
+        <Logo $isMobile={isMobile}>{logo}</Logo>
         {isMobile && leftMenus}
       </LeftContainer>
       <RightContainer>{isLogin ? rightMenus : loginButton}</RightContainer>

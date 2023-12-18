@@ -16,6 +16,8 @@ const ImageStepsProgressBar = ({
   currentImg,
   nextImg,
 }: ImageStepsProgressBarProps) => {
+  const progressValue = Math.ceil((currentStep / totalSteps) * 100);
+
   const stepsArray: ReactNode[] = [];
 
   const updateStepImages = () => {
@@ -41,11 +43,16 @@ const ImageStepsProgressBar = ({
   updateStepImages();
 
   return (
-    <StyledImageStepsProgressBar>
-      {stepsArray.map((image, idx) => (
-        <div key={idx}>{image}</div>
-      ))}
-    </StyledImageStepsProgressBar>
+    <>
+      <StyledImageStepsProgressBar aria-hidden='true'>
+        {stepsArray.map((image, idx) => (
+          <div key={idx}>{image}</div>
+        ))}
+      </StyledImageStepsProgressBar>
+
+      {/* Below section is for accessibility purpose only for screen reader. */}
+      <div style={{ color: 'transparent' }}>{progressValue}% complete</div>
+    </>
   );
 };
 
