@@ -50,7 +50,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     background-color: ${({ $variant, $bgColor }) =>
-      $variant === 'primary' ? $bgColor.dark : ColorMap['grey'].extraLight};
+      $variant === 'primary'
+        ? $bgColor === ColorMap['white']
+          ? ColorMap['grey'].extraLight
+          : $bgColor.dark
+        : ColorMap['grey'].extraLight};
     box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
       $hasShadow
         ? $variant === 'primary'

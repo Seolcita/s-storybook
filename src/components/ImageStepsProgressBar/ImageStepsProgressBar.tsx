@@ -1,5 +1,8 @@
 import React, { ReactNode } from 'react';
-import { StyledImageStepsProgressBar } from './ImageStepsProgressBar.styles';
+import {
+  Container,
+  StyledImageStepsProgressBar,
+} from './ImageStepsProgressBar.styles';
 
 export interface ImageStepsProgressBarProps {
   totalSteps: number;
@@ -43,7 +46,7 @@ const ImageStepsProgressBar = ({
   updateStepImages();
 
   return (
-    <>
+    <Container>
       <StyledImageStepsProgressBar aria-hidden='true'>
         {stepsArray.map((image, idx) => (
           <div key={idx}>{image}</div>
@@ -51,8 +54,10 @@ const ImageStepsProgressBar = ({
       </StyledImageStepsProgressBar>
 
       {/* Below section is for accessibility purpose only for screen reader. */}
-      <div style={{ color: 'transparent' }}>{progressValue}% complete</div>
-    </>
+      <div style={{ color: 'transparent' }} aria-label='progress indicator'>
+        {progressValue}% complete
+      </div>
+    </Container>
   );
 };
 
