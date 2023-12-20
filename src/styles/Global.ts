@@ -25,7 +25,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1;
-  font-family: ${({ theme }) => theme.fonts.poppins};
 }
 
 button {
