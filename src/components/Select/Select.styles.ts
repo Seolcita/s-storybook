@@ -30,11 +30,31 @@ export interface SelectOptionProps {
   $selectColor: ColorVariant;
 }
 
+const getSelectContainerWidth = ({
+  width,
+  $fullWidth,
+}: {
+  width?: number;
+  $fullWidth?: boolean;
+}): string => {
+  const minWidth = 20;
+
+  if (width) {
+    if (width < minWidth) {
+      return `${minWidth}rem`;
+    } else {
+      return `${width}rem`;
+    }
+  } else {
+    return '100%';
+  }
+};
+
 export const SelectContainer = styled.div<SelectContainerProps>`
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: ${({ width, $fullWidth }) => ($fullWidth ? '100%' : `${width}rem`)};
+  width: ${({ width, $fullWidth }) =>
+    getSelectContainerWidth({ width, $fullWidth })};
   height: ${({ height }) => (height ? `${height}rem` : '40rem')};
   overflow: 'hidden';
 `;
@@ -68,33 +88,17 @@ export const Caret = styled.button<CaretProps>`
   margin-left: 1rem;
 `;
 
-const getDropdownWidth = ({
-  width,
-  $fullWidth,
-}: {
-  width?: number;
-  $fullWidth?: boolean;
-}): string => {
-  const minWidth = 20;
-
-  if (width) {
-    if (width < minWidth) {
-      return `${minWidth - 0.5}rem`;
-    } else {
-      return `${width - 0.5}rem`;
-    }
-  } else if ($fullWidth) {
-    return '107%';
-  } else {
-    return '125%';
-  }
-};
-
+const minWidth = 20;
 export const DropdownContainer = styled.div<DropdownContainerProps>`
   display: flex;
   justify-content: center;
   visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
-  width: ${({ width, $fullWidth }) => getDropdownWidth({ width, $fullWidth })};
+  width: ${({ width }) =>
+    width
+      ? width < minWidth
+        ? `${minWidth - 0.5}rem`
+        : `${width - 0.5}rem`
+      : `calc(100% + 4rem)`};
   margin-top: 0.7rem;
 
   & > ul {
@@ -117,7 +121,7 @@ export const SelectOption = styled.div<SelectOptionProps>`
     $highlighted ? $selectColor.background : ColorMap['white'].main};
 
   &:hover {
-    background-color: ${({ $selectColor }) => $selectColor.background};
+    background-color: ${({ $selectColor }) => `${$selectColor.extraLight}80`};
   }
 
   &:active {

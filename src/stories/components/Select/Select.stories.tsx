@@ -34,6 +34,7 @@ export const Default = Template.bind({});
 Default.args = {
   color: 'primary',
   width: 25,
+  fullWidth: true,
 };
 
 export const FullWidth = Template.bind({});

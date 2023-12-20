@@ -12,9 +12,27 @@ export interface StyledButtonProps {
   disabled: ButtonProps['disabled'];
   $margin: string;
   $hasShadow: ButtonProps['hasShadow'];
-  borderRadius: ButtonProps['borderRadius'];
+  $borderRadius: ButtonProps['borderRadius'];
 }
-
+const getButtonHoverColor = ({
+  $variant,
+  $bgColor,
+}: {
+  $variant: ButtonProps['variant'];
+  $bgColor: ColorVariant;
+}) => {
+  if ($variant === 'primary') {
+    if ($bgColor === ColorMap['white']) {
+      return ColorMap['grey'].extraLight;
+    } else if ($bgColor === ColorMap['black']) {
+      return ColorMap['grey'].main;
+    } else {
+      return $bgColor.dark;
+    }
+  } else {
+    return ColorMap['grey'].extraLight;
+  }
+};
 export const StyledButton = styled.button<StyledButtonProps>`
   position: relative;
   display: flex;
@@ -25,7 +43,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   border: ${({ $variant, $textColor }) =>
     $variant === 'primary' ? 'none' : `0.25rem solid ${$textColor.main}`};
-  border-radius: ${({ borderRadius }) => borderRadius};
+  border-radius: ${({ $borderRadius }) => $borderRadius};
   color: ${({ $textColor }) => $textColor.main};
   box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
     $hasShadow
@@ -50,11 +68,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     background-color: ${({ $variant, $bgColor }) =>
-      $variant === 'primary'
-        ? $bgColor === ColorMap['white']
-          ? ColorMap['grey'].extraLight
-          : $bgColor.dark
-        : ColorMap['grey'].extraLight};
+      getButtonHoverColor({ $variant, $bgColor })};
     box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
       $hasShadow
         ? $variant === 'primary'
