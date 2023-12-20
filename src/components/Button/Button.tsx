@@ -60,7 +60,7 @@ const Button = ({
       $margin={formattedMargin}
       aria-label={ariaLabel}
       $hasShadow={hasShadow}
-      borderRadius={borderRadius}
+      $borderRadius={borderRadius}
     >
       {children}
     </StyledButton>
