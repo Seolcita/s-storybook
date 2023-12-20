@@ -118,7 +118,7 @@ export const SelectOption = styled.div<SelectOptionProps>`
   padding: 0.5rem 1rem;
   color: ${() => ColorMap['primary'].dark};
   background-color: ${({ $highlighted, $selectColor }) =>
-    $highlighted ? $selectColor.background : ColorMap['white'].main};
+    $highlighted ? $selectColor.extraLight : ColorMap['white'].main};
 
   &:hover {
     background-color: ${({ $selectColor }) => `${$selectColor.extraLight}80`};

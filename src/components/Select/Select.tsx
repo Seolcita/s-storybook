@@ -17,7 +17,7 @@ export type SelectColors = 'primary' | 'success' | 'warning' | 'error' | 'grey';
 
 export type Option = {
   label: string;
-  value: string | number;
+  value: string | number | boolean;
 };
 
 export type SelectProps = {
@@ -41,7 +41,9 @@ const Select = ({
 }: SelectProps): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number>();
-  const [selectedOption, setSelectedOption] = useState<string | number>();
+  const [selectedOption, setSelectedOption] = useState<
+    string | number | boolean
+  >();
 
   const selectRef = useRef<HTMLDivElement>(null);
   const selectColor = ColorMap[color];
@@ -139,7 +141,7 @@ const Select = ({
           <ul>
             {options.map((option, index) => (
               <SelectOption
-                key={option.value}
+                key={option.label}
                 $isOpen={isOpen}
                 onClick={(event) => {
                   event.stopPropagation();
