@@ -100,6 +100,7 @@ export const DropdownContainer = styled.div<DropdownContainerProps>`
         : `${width - 0.5}rem`
       : `calc(100% + 4rem)`};
   margin-top: 0.7rem;
+  z-index: 10;
 
   & > ul {
     width: 100%;
@@ -115,7 +116,6 @@ export const DropdownContainer = styled.div<DropdownContainerProps>`
 export const SelectOption = styled.div<SelectOptionProps>`
   width: 100%;
   padding: 0.5rem 1rem;
-  z-index: 1;
   color: ${() => ColorMap['primary'].dark};
   background-color: ${({ $highlighted, $selectColor }) =>
     $highlighted ? $selectColor.background : ColorMap['white'].main};
