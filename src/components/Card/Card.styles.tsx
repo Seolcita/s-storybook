@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CardProps } from './Card';
 import { space } from '../../tokens/space-token';
 import ColorMap from '../Color/ColorMap';
@@ -24,9 +24,13 @@ export const StyledCard = styled.div<StyledCardProps>`
   align-items: center;
   border-radius: 0.5rem;
   overflow: hidden;
-  width: ${({ width }) => `${width}rem` ?? '100%'};
-  height: ${({ height }) => `${height}rem` ?? '100%'};
   margin: ${({ $margin }) => $margin};
+  width: ${({ width }) => (width ? `${width}rem` : '100%')};
+  ${({ height }) =>
+    height &&
+    css`
+      height: ${height}rem;
+    `};
 
   &:hover {
     box-shadow: ${({ $isInteractive }) =>
