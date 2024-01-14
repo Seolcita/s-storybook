@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReactElement } from 'react';
-import { Span, Container } from './LineLoading.styles';
+import { Span } from './LineLoader.styles';
+import { FlexCenter } from '../../styles/Common/Common.styles';
 
 export type LineLoadingSize = 'sm' | 'lg';
 
@@ -24,7 +25,7 @@ const contents: Content[] = [
 
 const LineLoading = ({ size = 'lg' }: LineLoadingProps): ReactElement => {
   return (
-    <Container>
+    <FlexCenter>
       {contents.map((item: Content) => {
         console.log(item);
         return (
@@ -38,7 +39,7 @@ const LineLoading = ({ size = 'lg' }: LineLoadingProps): ReactElement => {
           </Span>
         );
       })}
-    </Container>
+    </FlexCenter>
   );
 };
 

@@ -1,14 +1,11 @@
 import styled from 'styled-components';
-import { FlexCenter } from '../../styles/Common/Common.styles';
-import { LineLoadingProps, LineLoadingSize } from './LineLoading';
+import { LineLoadingProps } from './LineLoader';
 
 type SpanProps = {
   $size: LineLoadingProps['size'];
   $bgColor: string;
   $animationDelay: number;
 };
-
-export const Container = styled(FlexCenter)``;
 
 export const Span = styled.span<SpanProps>`
   color: transparent;
