@@ -1,6 +1,5 @@
 import React from 'react';
 import { ReactElement } from 'react';
-import { FlexCenter } from '../../styles/Common/Common.styles';
 import { ColorMap, Colors } from '../Color';
 import { Container, Ring } from './Spinner.styles';
 import spinnerTokens, {
@@ -27,7 +26,12 @@ const Spinner = ({
   color = 'white',
 }: SpinnerProps): ReactElement => {
   return (
-    <Container $size={SpinnerSizeMap[size]}>
+    <Container
+      $size={SpinnerSizeMap[size]}
+      aria-label='loading'
+      role='alert'
+      aria-busy='true'
+    >
       <Ring $color={ColorMap[color]} />
     </Container>
   );
