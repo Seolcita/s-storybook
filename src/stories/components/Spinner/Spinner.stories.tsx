@@ -1,7 +1,5 @@
-// import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Spinner from '../../../components/Spinner';
-// import { Box } from '@mui/material';
 
 const meta: Meta<typeof Spinner> = {
   title: 'Components/Atomic/loader/Spinner',
@@ -9,18 +7,6 @@ const meta: Meta<typeof Spinner> = {
 };
 
 export default meta;
-
-// function storyDecorator(width: number): Story {
-//   return {
-//     decorators: [
-//       (Story) => (
-//         <Box width={`${width}rem`} bgcolor={'grey'}>
-//           <Story />
-//         </Box>
-//       ),
-//     ],
-//   };
-// }
 
 type Story = StoryObj<typeof Spinner>;
 
