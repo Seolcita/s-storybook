@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { LineLoadingProps } from './LineLoader';
+import { LineLoaderProps } from './LineLoader';
 
 type SpanProps = {
-  $size: LineLoadingProps['size'];
+  $size: LineLoaderProps['size'];
   $bgColor: string;
   $animationDelay: number;
 };

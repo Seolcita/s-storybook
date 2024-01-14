@@ -3,10 +3,10 @@ import { ReactElement } from 'react';
 import { Span } from './LineLoader.styles';
 import { FlexCenter } from '../../styles/Common/Common.styles';
 
-export type LineLoadingSize = 'sm' | 'lg';
+export type LineLoaderSize = 'sm' | 'lg';
 
-export interface LineLoadingProps {
-  size?: LineLoadingSize;
+export interface LineLoaderProps {
+  size?: LineLoaderSize;
 }
 
 interface Content {
@@ -23,7 +23,7 @@ const contents: Content[] = [
   { color: '#ea3d8c', animationDelay: 0.7 },
 ];
 
-const LineLoading = ({ size = 'lg' }: LineLoadingProps): ReactElement => {
+const LineLoader = ({ size = 'lg' }: LineLoaderProps): ReactElement => {
   return (
     <FlexCenter>
       {contents.map((item: Content) => {
@@ -43,5 +43,5 @@ const LineLoading = ({ size = 'lg' }: LineLoadingProps): ReactElement => {
   );
 };
 
-export default LineLoading;
-export { LineLoading };
+export default LineLoader;
+export { LineLoader };

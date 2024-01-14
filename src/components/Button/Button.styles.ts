@@ -33,6 +33,7 @@ const getButtonHoverColor = ({
     return ColorMap['grey'].extraLight;
   }
 };
+
 export const StyledButton = styled.button<StyledButtonProps>`
   position: relative;
   display: flex;
