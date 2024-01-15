@@ -77,15 +77,15 @@ export const colors = {
   },
   yellowLight: {
     code: 400,
-    hex: '#FDB022',
+    hex: '#ffcf00',
   },
   yellowMedium: {
     code: 600,
-    hex: '#DC6803',
+    hex: '#FDB022',
   },
   yellowDark: {
     code: 800,
-    hex: '#93370D',
+    hex: '#e48c00',
   },
   greenBackground: {
     code: 25,

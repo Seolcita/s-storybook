@@ -7,3 +7,4 @@ export { default as Select } from './Select';
 export { default as Typography } from './Typography';
 export { default as LineLoader } from './LineLoader';
 export { default as Spinner } from './Spinner';
+export { default as Toast } from './Toast';
