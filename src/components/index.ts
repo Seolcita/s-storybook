@@ -5,3 +5,5 @@ export { default as Header } from './Header';
 export { default as ImageStepsProgressBar } from './ImageStepsProgressBar';
 export { default as Select } from './Select';
 export { default as Typography } from './Typography';
+export { default as LineLoader } from './LineLoader';
+export { default as Spinner } from './Spinner';
