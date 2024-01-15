@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import LineLoader from '../../../components/LineLoader';
 
 const meta: Meta<typeof LineLoader> = {
-  title: 'Components/Atomic/loader/LineLoader',
+  title: 'Components/Atomic/LineLoader',
   component: LineLoader,
 };
 

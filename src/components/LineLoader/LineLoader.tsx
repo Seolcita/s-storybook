@@ -9,7 +9,7 @@ export interface LineLoaderProps {
   size?: LineLoaderSize;
 }
 
-interface Content {
+export interface Content {
   color: string;
   animationDelay: number;
 }
