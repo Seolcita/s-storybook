@@ -23,8 +23,8 @@ export const Container = styled.div.attrs({
   width: 100%;
   height: 100%;
   align-items: center;
-  min-width: 30rem;
-  min-height: 5rem;
+  min-width: 32rem;
+  min-height: 6rem;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   background-color: ${({ $variant }) => $variant.color.dark};
@@ -32,7 +32,7 @@ export const Container = styled.div.attrs({
 
 export const TextBox = styled.div`
   display: flex;
-  margin: 0 1rem;
+  margin: 0 1rem 0 2rem;
   flex-grow: 1;
 `;
 

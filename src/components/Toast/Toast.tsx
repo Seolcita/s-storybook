@@ -18,7 +18,6 @@ export type ToastVariant = 'success' | 'warning' | 'error' | 'info';
 export interface ToastProps {
   message: string;
   variant: ToastVariant;
-  isOpen: boolean;
 }
 
 export interface ToastContents {
