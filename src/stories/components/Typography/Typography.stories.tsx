@@ -4,6 +4,9 @@ import Typography from '../../../components/Typography';
 const meta: Meta<typeof Typography> = {
   title: 'Components/Atomic/Typography',
   component: Typography,
+  args: {
+    fontFamily: 'secondary',
+  },
 };
 
 export default meta;
