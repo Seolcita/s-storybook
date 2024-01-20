@@ -6,22 +6,26 @@ import { setSpaceInput, setSpacing } from '../../helper/setSpacing';
 export interface CardProps {
   isInteractive?: boolean;
   isPadded?: boolean;
-  tabIndex: number;
+  tabIndex?: number;
   ariaLabel: string;
   width?: number;
   height?: number;
   margin?: setSpaceInput;
+  hasBoxShadow?: boolean;
+  borderRadius?: number;
   children?: ReactNode;
 }
 
 const Card = ({
-  isInteractive = true,
+  isInteractive = false,
   isPadded,
-  tabIndex,
+  tabIndex = 0,
   ariaLabel,
   width,
   height,
   margin,
+  hasBoxShadow = true,
+  borderRadius = 0.5,
   children,
 }: CardProps): ReactElement => {
   const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
@@ -33,6 +37,8 @@ const Card = ({
       width={width}
       height={height}
       $margin={formattedMargin}
+      $hasBoxShadow={hasBoxShadow}
+      $borderRadius={borderRadius}
       aria-label={ariaLabel}
     >
       {children}

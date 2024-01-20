@@ -30,12 +30,20 @@ export type FontWeight =
   | 'extraBold'
   | 'heavy';
 
+export type FontFamily = 'primary' | 'secondary';
+
+const FontFamilyMap: Record<FontFamily, string> = {
+  primary: `"Titillium Web", sans-serif`,
+  secondary: `"Poppins", sans-serif`,
+};
+
 export interface TypographyProps {
   children: React.ReactNode;
   variant: TypographyVariant;
   fontWeight?: FontWeight;
   color?: Colors;
   margin?: setSpaceInput;
+  fontFamily?: FontFamily;
 }
 
 export interface TypographyStyleProperties extends TypographyBasicProperties {
@@ -43,6 +51,7 @@ export interface TypographyStyleProperties extends TypographyBasicProperties {
   color?: string;
   margin: string | number;
   padding: string | number;
+  fontFamily: string;
 }
 
 export type Tag = {
@@ -110,14 +119,17 @@ const Typography = ({
   fontWeight = 'normal',
   color = 'black',
   margin,
+  fontFamily = 'primary',
 }: TypographyProps): ReactElement => {
   const weight = FontWeightMap[fontWeight];
   const typography = TypographyVariantMap[variant];
   const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
+
   const customStyle = {
-    fontFamily: typography.fontFamily,
+    fontFamily: FontFamilyMap[fontFamily],
     fontSize: typography.fontSize,
     lineHeight: typography.lineHeight,
+    letterSpacing: typography.letterSpacing,
     fontWeight: weight,
     color: ColorMap[color].main,
     margin: formattedMargin,

@@ -13,7 +13,7 @@ export const colors = {
   },
   greyExtraLight: {
     code: 200,
-    hex: '#E4E7EC',
+    hex: '#E5E5E5',
   },
   greyLight: {
     code: 400,
@@ -25,7 +25,7 @@ export const colors = {
   },
   greyDark: {
     code: 800,
-    hex: '#1D2939',
+    hex: '#112031',
   },
   blueBackground: {
     code: 25,
@@ -85,7 +85,7 @@ export const colors = {
   },
   yellowDark: {
     code: 800,
-    hex: '#e48c00',
+    hex: '#E48C00',
   },
   greenBackground: {
     code: 25,

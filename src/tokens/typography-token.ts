@@ -1,5 +1,3 @@
-const FontFamily = ['Poppins', 'Roboto', 'Arial', 'sans-serif'].join(',');
-
 const fontWeight = {
   thin: 100,
   extraLight: 200,
@@ -13,77 +11,77 @@ const fontWeight = {
 };
 
 export type TypographyBasicProperties = {
-  fontFamily: string;
   fontSize: string;
   lineHeight: string;
+  letterSpacing: string;
 };
 
 // heading
 const headingXXL: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '7.2rem',
   lineHeight: '9rem',
+  letterSpacing: '-0.03rem',
 };
 
 const headingXL: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '6rem',
   lineHeight: '9rem',
+  letterSpacing: '-0.02rem',
 };
 
 const headingL: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '4.8rem',
   lineHeight: '6rem',
+  letterSpacing: '0',
 };
 
 const headingM: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '3.6rem',
   lineHeight: '4.4rem',
+  letterSpacing: '0.05rem',
 };
 
 const headingS: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '3rem',
   lineHeight: '3.8rem',
+  letterSpacing: '0.05rem',
 };
 
 const headingXS: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '2rem',
   lineHeight: '3rem',
+  letterSpacing: '0.05rem',
 };
 
 // text
 const textXL: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '2rem',
   lineHeight: '3rem',
+  letterSpacing: '0.01em',
 };
 
 const textL: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '1.8rem',
   lineHeight: '2.8rem',
+  letterSpacing: '0.015em',
 };
 
 const textM: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '1.6rem',
   lineHeight: '2.4rem',
+  letterSpacing: '0.02em',
 };
 
 const textS: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '1.4rem',
   lineHeight: '2rem',
+  letterSpacing: '0.03em',
 };
 
 const textXS: TypographyBasicProperties = {
-  fontFamily: FontFamily,
   fontSize: '1.2rem',
   lineHeight: '1.8rem',
+  letterSpacing: '0.04em',
 };
 
 export default {
