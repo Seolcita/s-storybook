@@ -1,6 +1,6 @@
 {
   "name": "sk-storybook",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "A React component library",
   "scripts": {
     "rollup": "rollup -c",

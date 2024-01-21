@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import type { Meta } from '@storybook/react';
 import { Box } from '@mui/material';
-import type { Meta, StoryObj } from '@storybook/react';
 
 import Modal from '../../../components/Modal';
-import Typography from '../../../components/Typography/Typography';
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Composite/Badge',
@@ -11,8 +10,6 @@ const meta: Meta<typeof Modal> = {
 };
 
 export default meta;
-
-type Story = StoryObj<typeof Modal>;
 
 const PlaceHolder = (
   <Box
@@ -31,11 +28,14 @@ const Template: any = (args: any) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
   return (
-    <Box width={'30rem'}>
+    <Box width={'100rem'} height={'40rem'}>
       <Modal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         children={PlaceHolder}
+        ariaLabel='Modal'
+        width={30}
+        backdropColor='#000000'
       />
     </Box>
   );

@@ -1,34 +1,41 @@
-import React, { ReactNode } from 'react';
-import { ReactElement } from 'react';
-import { CloseButton, Container } from './Modal.styles';
+import React, { ReactElement, ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import Card from '../Card';
+
+import { CloseButton, Contents, StyledModal, Wrapper } from './Modal.styles';
 
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  width?: number;
+  ariaLabel: string;
+  backdropColor: string;
   children: ReactNode;
 }
 
 const Modal = ({
   isOpen,
   onClose,
+  width,
   children,
+  ariaLabel,
+  backdropColor,
 }: ModalProps): ReactElement | null => {
   if (!isOpen) {
     return null;
   }
 
   return (
-    <Card ariaLabel='Modal' hasBoxShadow={false} isPadded>
-      <Container>
-        <CloseButton onClick={onClose}>
-          <FontAwesomeIcon icon={faCircleXmark} size='lg' />
-        </CloseButton>
-        {children}
-      </Container>
-    </Card>
+    <Wrapper $backdropColor={backdropColor}>
+      <StyledModal $ariaLabel={ariaLabel}>
+        <Contents width={width}>
+          <CloseButton onClick={onClose}>
+            <FontAwesomeIcon icon={faCircleXmark} size='lg' />
+          </CloseButton>
+          {children}
+        </Contents>
+      </StyledModal>
+    </Wrapper>
   );
 };
 
