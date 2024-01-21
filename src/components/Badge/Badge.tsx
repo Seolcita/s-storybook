@@ -18,7 +18,7 @@ const Badge = ({
 }: BadgeProps): ReactElement => {
   return (
     <Container $bgColor={bgColor} $title={title}>
-      <Typography variant='textS' color={color} fontWeight='bold'>
+      <Typography variant='textXS' color={color} fontWeight='bold'>
         {title}
       </Typography>
     </Container>
