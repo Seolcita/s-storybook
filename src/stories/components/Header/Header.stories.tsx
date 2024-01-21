@@ -8,7 +8,7 @@ import Header from '../../../components/Header';
 import Placeholder from '../../../utils/placeholder';
 
 const meta: Meta<typeof Header> = {
-  title: 'Components/Composite/Header',
+  title: 'Components/Atomic/Header',
   component: Header,
   parameters: {
     layout: 'padded',
