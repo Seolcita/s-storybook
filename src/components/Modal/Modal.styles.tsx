@@ -18,6 +18,9 @@ export interface ContentsProps {
 }
 
 export const Wrapper = styled(FlexCenter)<WrapperProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: ${({ $backdropColor }) =>
@@ -38,19 +41,24 @@ export const StyledModal = styled.dialog.attrs((props: StyledModalProps) => ({
 `;
 
 export const Contents = styled.div<ContentsProps>`
-  position: relative;
   width: ${({ width }) => (width ? `${width}rem` : '100%')};
 `;
 
+export const ButtonContainer = styled(FlexCenter)<ContentsProps>`
+  width: 100%;
+  justify-content: flex-end;
+`;
+
 export const CloseButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   justify-content: center;
+  align-items: center;
   background-color: transparent;
   border: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
 
   &:hover,
   &:focus {

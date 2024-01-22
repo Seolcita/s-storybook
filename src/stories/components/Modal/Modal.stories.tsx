@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import Modal from '../../../components/Modal';
 
 const meta: Meta<typeof Modal> = {
-  title: 'Components/Composite/Badge',
+  title: 'Components/Atomic/Modal',
   component: Modal,
 };
 

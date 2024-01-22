@@ -2,14 +2,20 @@ import React, { ReactElement, ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
-import { CloseButton, Contents, StyledModal, Wrapper } from './Modal.styles';
+import {
+  ButtonContainer,
+  CloseButton,
+  Contents,
+  StyledModal,
+  Wrapper,
+} from './Modal.styles';
 
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   width?: number;
   ariaLabel: string;
-  backdropColor: string;
+  backdropColor?: string;
   children: ReactNode;
 }
 
@@ -29,9 +35,11 @@ const Modal = ({
     <Wrapper $backdropColor={backdropColor}>
       <StyledModal $ariaLabel={ariaLabel}>
         <Contents width={width}>
-          <CloseButton onClick={onClose}>
-            <FontAwesomeIcon icon={faCircleXmark} size='lg' />
-          </CloseButton>
+          <ButtonContainer>
+            <CloseButton onClick={onClose}>
+              <FontAwesomeIcon icon={faCircleXmark} size='lg' />
+            </CloseButton>
+          </ButtonContainer>
           {children}
         </Contents>
       </StyledModal>
