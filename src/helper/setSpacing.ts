@@ -16,6 +16,5 @@ export const setSpacing = (spacing: setSpaceInput): string => {
     .map((spaceKey) => space[spaceKey])
     .join(' ');
 
-  console.log(formattedSpacing);
   return formattedSpacing;
 };

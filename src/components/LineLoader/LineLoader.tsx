@@ -27,7 +27,6 @@ const LineLoader = ({ size = 'lg' }: LineLoaderProps): ReactElement => {
   return (
     <FlexCenter aria-label='loading' role='alert' aria-busy='true'>
       {contents.map((item: Content) => {
-        console.log(item);
         return (
           <Span
             key={item.color}
