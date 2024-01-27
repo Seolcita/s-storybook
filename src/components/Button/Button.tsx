@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { type ReactElement } from 'react';
 
 import buttonTokens, { ButtonSizeProperties } from '../../tokens/button-token';
-import { StyledButton } from './Button.styles';
-import ColorMap, { Colors } from '../Color/ColorMap';
 import { setSpaceInput, setSpacing } from '../../helper/setSpacing';
+import ColorMap, { Colors } from '../Color/ColorMap';
+import { StyledButton } from './Button.styles';
 
 export type ButtonVariant = 'primary' | 'outlined';
 export type ButtonSize = 'xs' | 's' | 'm' | 'l' | 'xl';
@@ -17,7 +17,7 @@ export const ButtonSizeMap: Record<ButtonSize, ButtonSizeProperties> = {
   xl: buttonTokens.buttonXL,
 };
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   bgColor?: Colors;
   textColor: Colors;
@@ -30,6 +30,7 @@ export interface ButtonProps {
   hasShadow?: boolean;
   borderRadius?: string;
   ariaLabel: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const Button = ({
@@ -44,6 +45,7 @@ const Button = ({
   borderRadius = '0.5rem',
   ariaLabel,
   onClick,
+  type = 'submit',
   children,
 }: ButtonProps): ReactElement => {
   const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
@@ -61,6 +63,7 @@ const Button = ({
       aria-label={ariaLabel}
       $hasShadow={hasShadow}
       $borderRadius={borderRadius}
+      type={type}
     >
       {children}
     </StyledButton>

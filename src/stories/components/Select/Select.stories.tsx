@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react';
 import { Box } from '@mui/material';
-import Select, { Option } from '../../../components/Select';
+import Select, { SelectOption } from '../../../components/Select';
 
 export default {
   title: 'Components/Atomic/Select',
@@ -16,7 +16,7 @@ const selectOptions = [
 ];
 
 const Template: any = (args: any) => {
-  const [value, setValue] = useState<Option | undefined>();
+  const [value, setValue] = useState<SelectOption | undefined>();
 
   return (
     <Box width={600} display='flex' justifyContent='center' alignItems='center'>
@@ -24,7 +24,7 @@ const Template: any = (args: any) => {
         {...args}
         value={value}
         options={selectOptions}
-        onChange={(opt: Option) => setValue(opt)}
+        onChange={(opt: SelectOption) => setValue(opt)}
       />
     </Box>
   );

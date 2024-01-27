@@ -113,7 +113,7 @@ export const DropdownContainer = styled.div<DropdownContainerProps>`
   }
 `;
 
-export const SelectOption = styled.div<SelectOptionProps>`
+export const StyledSelectOption = styled.div<SelectOptionProps>`
   width: 100%;
   padding: 0.5rem 1rem;
   color: ${() => ColorMap['primary'].dark};
