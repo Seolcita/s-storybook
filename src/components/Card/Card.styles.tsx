@@ -1,13 +1,15 @@
-import styled, { css } from 'styled-components';
-import { CardProps } from './Card';
+import styled from 'styled-components';
 import { space } from '../../tokens/space-token';
 import ColorMap from '../Color/ColorMap';
+import { CardProps } from './Card';
 
 interface StyledCardProps {
   $isInteractive: CardProps['isInteractive'];
   $isPadded: CardProps['isPadded'];
   width?: CardProps['width'];
   height?: CardProps['height'];
+  $minWidth?: CardProps['minWidth'];
+  $maxWidth?: CardProps['maxWidth'];
   $margin?: string;
   $hasBoxShadow: CardProps['hasBoxShadow'];
   $borderRadius?: CardProps['borderRadius'];
@@ -30,11 +32,9 @@ export const StyledCard = styled.section<StyledCardProps>`
   margin: ${({ $margin }) => $margin};
   width: ${({ width }) => (width ? `${width}rem` : '100%')};
   cursor: ${({ $isInteractive }) => ($isInteractive ? 'pointer' : 'default')};
-  ${({ height }) =>
-    height &&
-    css`
-      height: ${height}rem;
-    `};
+  ${({ height }) => height && `height: ${height}rem;`}
+  ${({ $minWidth }) => $minWidth && `min-width: ${$minWidth}rem;`}
+  ${({ $maxWidth }) => $maxWidth && `max-width: ${$maxWidth}rem;`}
 
   &:hover {
     box-shadow: ${({ $isInteractive, $hasBoxShadow }) =>

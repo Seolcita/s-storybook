@@ -10,6 +10,8 @@ export interface CardProps {
   ariaLabel: string;
   width?: number;
   height?: number;
+  minWidth?: number;
+  maxWidth?: number;
   margin?: setSpaceInput;
   hasBoxShadow?: boolean;
   borderRadius?: number;
@@ -26,6 +28,8 @@ const Card = ({
   margin,
   hasBoxShadow = true,
   borderRadius = 0.5,
+  minWidth,
+  maxWidth,
   children,
 }: CardProps): ReactElement => {
   const formattedMargin = margin ? setSpacing(margin) : setSpacing('none');
@@ -36,6 +40,8 @@ const Card = ({
       tabIndex={tabIndex}
       width={width}
       height={height}
+      $minWidth={minWidth}
+      $maxWidth={maxWidth}
       $margin={formattedMargin}
       $hasBoxShadow={hasBoxShadow}
       $borderRadius={borderRadius}
