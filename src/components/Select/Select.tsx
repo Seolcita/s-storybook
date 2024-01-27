@@ -4,8 +4,8 @@ import {
   Caret,
   DropdownContainer,
   SelectContainer,
-  SelectOption,
   StyledSelect,
+  StyledSelectOption,
 } from './Select.styles';
 import { Box } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,19 +15,19 @@ import ColorMap from '../Color/ColorMap';
 
 export type SelectColors = 'primary' | 'success' | 'warning' | 'error' | 'grey';
 
-export type Option = {
+export type SelectOption = {
   label: string;
   value: string | number | boolean;
 };
 
 export type SelectProps = {
-  options: Option[];
+  options: SelectOption[];
   width?: number;
   height?: number;
   fullWidth?: boolean;
   color?: SelectColors;
-  value: Option | undefined;
-  onChange: (value: Option) => void;
+  value: SelectOption | undefined;
+  onChange: (value: SelectOption) => void;
 };
 
 const Select = ({
@@ -48,7 +48,7 @@ const Select = ({
   const selectRef = useRef<HTMLDivElement>(null);
   const selectColor = ColorMap[color];
 
-  const selectOption = (option: Option): void => {
+  const selectOption = (option: SelectOption): void => {
     if (option.value !== value?.value) onChange(option);
   };
 
@@ -72,7 +72,7 @@ const Select = ({
 
   const handleKeyDown = (
     event: KeyboardEvent<HTMLDivElement>,
-    option?: Option,
+    option?: SelectOption,
     index?: number
   ) => {
     switch (event.key) {
@@ -140,7 +140,7 @@ const Select = ({
         >
           <ul>
             {options.map((option, index) => (
-              <SelectOption
+              <StyledSelectOption
                 key={option.label}
                 $isOpen={isOpen}
                 onClick={(event) => {
@@ -155,13 +155,13 @@ const Select = ({
                 tabIndex={0}
                 onKeyDown={(event) => handleKeyDown(event, option, index)}
                 role='option'
-                area-label={option.value}
+                aria-label={option.value.toString()}
                 aria-selected={selectedOption === option.value}
               >
                 <Typography variant='textS' color={color}>
                   {option.label}
                 </Typography>
-              </SelectOption>
+              </StyledSelectOption>
             ))}
           </ul>
         </DropdownContainer>

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { ButtonProps } from '.';
 import ColorMap, { ColorVariant } from '../Color/ColorMap';
-import { ButtonSizeProperties } from '../../tokens/button-token';
+import { ButtonSizeProperties } from '../../tokens';
+import { ButtonProps } from '.';
 
 export interface StyledButtonProps {
   $variant: ButtonProps['variant'];

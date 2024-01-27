@@ -35,7 +35,6 @@ const Template: any = (args: any) => {
         children={PlaceHolder}
         ariaLabel='Modal'
         width={30}
-        backdropColor='#000000'
       />
     </Box>
   );

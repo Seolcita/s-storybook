@@ -24,7 +24,7 @@ export const Wrapper = styled(FlexCenter)<WrapperProps>`
   width: 100%;
   height: 100%;
   background-color: ${({ $backdropColor }) =>
-    $backdropColor ?? ColorMap['grey'].dark};
+    $backdropColor ? $backdropColor : ColorMap['black'].main}B3;
 `;
 
 export const StyledModal = styled.dialog.attrs((props: StyledModalProps) => ({
