@@ -25,7 +25,7 @@ const contents: Content[] = [
 
 const LineLoader = ({ size = 'lg' }: LineLoaderProps): ReactElement => {
   return (
-    <FlexCenter aria-label='loading' role='alert' aria-busy='true'>
+    <FlexCenter aria-label='loading' role='status' aria-busy='true'>
       {contents.map((item: Content) => {
         return (
           <Span
@@ -33,6 +33,7 @@ const LineLoader = ({ size = 'lg' }: LineLoaderProps): ReactElement => {
             $size={size}
             $bgColor={item.color}
             $animationDelay={item.animationDelay}
+            aria-label='loading-bars'
           >
             .
           </Span>

@@ -1,17 +1,16 @@
-import React, { ReactNode, useEffect, useState } from 'react';
-import { ReactElement } from 'react';
-import { ColorMap, ColorVariant } from '../Color';
-import { CloseButton, Container, IconBox, TextBox } from './Toast.styles';
+import React, { ReactNode, useEffect, useState, ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCircleInfo,
   faTriangleExclamation,
   faCircleCheck,
   faExplosion,
   faXmark,
   faBell,
 } from '@fortawesome/free-solid-svg-icons';
+
 import Typography from '../Typography';
+import { ColorMap, ColorVariant } from '../Color';
+import { CloseButton, Container, IconBox, TextBox } from './Toast.styles';
 
 export type ToastVariant = 'success' | 'warning' | 'error' | 'info';
 

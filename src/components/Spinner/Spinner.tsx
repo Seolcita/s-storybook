@@ -29,10 +29,10 @@ const Spinner = ({
     <Container
       $size={SpinnerSizeMap[size]}
       aria-label='loading'
-      role='alert'
+      role='status'
       aria-busy='true'
     >
-      <Ring $color={ColorMap[color]} />
+      <Ring $color={ColorMap[color]} aria-label='spinner-ring' />
     </Container>
   );
 };
