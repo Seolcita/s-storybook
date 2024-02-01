@@ -33,10 +33,10 @@ const Modal = ({
 
   return (
     <Wrapper $backdropColor={backdropColor}>
-      <StyledModal $ariaLabel={ariaLabel}>
+      <StyledModal aria-label={ariaLabel} role='dialog' aria-modal={true}>
         <Contents width={width}>
           <ButtonContainer>
-            <CloseButton onClick={onClose}>
+            <CloseButton onClick={onClose} aria-label='modal close button'>
               <FontAwesomeIcon icon={faCircleXmark} size='lg' />
             </CloseButton>
           </ButtonContainer>

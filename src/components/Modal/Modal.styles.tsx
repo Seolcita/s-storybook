@@ -7,10 +7,6 @@ import { ColorMap } from '../Color';
 export interface WrapperProps {
   $backdropColor: ModalProps['backdropColor'];
 }
-export interface StyledModalProps {
-  width?: ModalProps['width'];
-  $ariaLabel: ModalProps['ariaLabel'];
-}
 
 export interface ContentsProps {
   width?: number;
@@ -27,11 +23,7 @@ export const Wrapper = styled(FlexCenter)<WrapperProps>`
     $backdropColor ? $backdropColor : ColorMap['black'].main}B3;
 `;
 
-export const StyledModal = styled.dialog.attrs((props: StyledModalProps) => ({
-  role: 'dialog',
-  'aria-modal': true,
-  'aria-labelledby': props.$ariaLabel,
-}))<StyledModalProps>`
+export const StyledModal = styled.dialog`
   display: flex;
   align-items: center;
   justify-content: center;

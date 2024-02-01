@@ -26,7 +26,7 @@ describe('Spinner', () => {
   it('renders with correct color', () => {
     render(<Spinner color='black' />);
 
-    const spinner = screen.getByLabelText('spinner-ring');
+    const spinner = screen.getByTestId('spinner-ring');
     const color = ColorMap.black.main;
 
     expect(spinner).toHaveStyle(`border-left: 0.25rem solid ${color}`);
