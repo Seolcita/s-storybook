@@ -76,7 +76,11 @@ const Toast = ({ message, variant }: ToastProps): ReactElement => {
         </Typography>
       </TextBox>
 
-      <CloseButton $variant={toastVariant} onClick={handleClick}>
+      <CloseButton
+        $variant={toastVariant}
+        onClick={handleClick}
+        aria-label='toast close button'
+      >
         <FontAwesomeIcon icon={faXmark} fontSize={'1.5rem'} />
       </CloseButton>
     </Container>

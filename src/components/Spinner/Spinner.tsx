@@ -32,7 +32,7 @@ const Spinner = ({
       role='status'
       aria-busy='true'
     >
-      <Ring $color={ColorMap[color]} aria-label='spinner-ring' />
+      <Ring $color={ColorMap[color]} data-testid='spinner-ring' />
     </Container>
   );
 };
