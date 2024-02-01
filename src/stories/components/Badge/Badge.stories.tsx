@@ -7,35 +7,59 @@ import Badge from '../../../components/Badge';
 const meta: Meta<typeof Badge> = {
   title: 'Components/Atomic/Badge',
   component: Badge,
+  argTypes: {
+    count: {
+      control: {
+        type: 'number',
+        min: 1,
+        step: 1,
+      },
+    },
+    maxCount: {
+      control: {
+        type: 'number',
+        min: 1,
+        step: 1,
+      },
+    },
+  },
 };
 
 export default meta;
 
-function storyDecorator(): Story {
-  return {
-    decorators: [
-      (Story) => (
-        <Box
-          width={'4rem'}
-          height={'4rem'}
-          bgcolor={'lightgrey'}
-          borderRadius={'50%'}
-          position={'relative'}
-        >
-          <Story />
-        </Box>
-      ),
-    ],
-  };
-}
+const PlaceHolder = (
+  <Box
+    width={'5rem'}
+    height={'5rem'}
+    bgcolor={'lightgrey'}
+    display={'flex'}
+    justifyContent={'center'}
+    alignItems={'center'}
+    borderRadius={'50%'}
+  ></Box>
+);
 
 type Story = StoryObj<typeof Badge>;
 
 export const Default: Story = {
-  ...storyDecorator(),
-  args: { bgColor: 'primary' },
+  args: { bgColor: 'primary', children: PlaceHolder },
 };
 
-export const Text: Story = {
-  args: { title: 'Text', color: 'white', bgColor: 'primary' },
+export const Count: Story = {
+  args: {
+    count: 55,
+    color: 'white',
+    bgColor: 'primary',
+    children: PlaceHolder,
+  },
+};
+
+export const MaxCount: Story = {
+  args: {
+    count: 55,
+    maxCount: 50,
+    color: 'white',
+    bgColor: 'primary',
+    children: PlaceHolder,
+  },
 };

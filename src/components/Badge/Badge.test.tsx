@@ -4,11 +4,14 @@ import { cleanup, render, screen } from '@testing-library/react';
 
 import { ColorMap } from '../Color';
 import Badge, { BadgeProps } from './Badge';
+import Placeholder from '../../utils/placeholder';
 
 const props: BadgeProps = {
-  title: 'Badge Title',
+  count: 50,
+  maxCount: 55,
   bgColor: 'primary',
   color: 'white',
+  children: <Placeholder />,
 };
 
 describe('Badge', () => {
@@ -20,36 +23,43 @@ describe('Badge', () => {
     cleanup();
   });
 
-  it('renders with correct title', () => {
-    render(<Badge {...props} />);
+  it('renders without count', () => {
+    render(<Badge children={props.children} />);
 
-    const badge = screen.getByLabelText('badge');
+    const badge = screen.getByTestId('badge');
 
     expect(badge).toBeInTheDocument();
+    expect(badge).toHaveStyle('width: 1.5rem');
+    expect(badge).toHaveStyle('height: 1.5rem');
   });
 
   it('renders with correct background color', () => {
-    render(<Badge {...props} />);
+    render(<Badge {...props}>{props.children}</Badge>);
 
-    const badge = screen.getByLabelText('badge');
-
-    expect(badge).toHaveStyle(`background-color: ${ColorMap.primary.main}`);
+    expect(screen.getByTestId('badge')).toHaveStyle(
+      `background-color: ${ColorMap.primary.main}`
+    );
   });
 
-  it('renders with correct title color', () => {
-    render(<Badge {...props} />);
+  it('renders with correct count color', () => {
+    render(<Badge {...props}>{props.children}</Badge>);
 
-    const badgeTitle = screen.getByText('Badge Title');
-
-    expect(badgeTitle).toHaveStyle(`color: ${ColorMap.white.main}`);
+    expect(screen.getByText('50')).toHaveStyle(`color: ${ColorMap.white.main}`);
   });
 
-  it('renders with correct size when title is not exist', () => {
-    render(<Badge />);
+  it('renders with correct count value', () => {
+    render(<Badge {...props}>{props.children}</Badge>);
 
-    const badge = screen.getByLabelText('badge');
+    expect(screen.getByText('50')).toBeInTheDocument();
+  });
 
-    expect(badge).toHaveStyle('width: 1.5rem');
-    expect(badge).toHaveStyle('height: 1.5rem');
+  it('renders with correct count value when count is higher than maxCount', () => {
+    render(
+      <Badge {...props} maxCount={45}>
+        {props.children}
+      </Badge>
+    );
+
+    expect(screen.getByText('45')).toBeInTheDocument();
   });
 });
