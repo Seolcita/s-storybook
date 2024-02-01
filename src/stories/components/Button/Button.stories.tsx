@@ -1,7 +1,8 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import Button from '../../../components/Button';
 import { Box } from '@mui/material';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import Button from '../../../components/Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Atomic/Button',
@@ -90,7 +91,28 @@ export const CustomBorderRadius: Story = {
     textColor: 'white',
     children: 'Button',
     ariaLabel: 'ARIA-Label',
-    borderRadius: '3rem',
+    borderRadius: 3,
+  },
+};
+
+// Box Shadow
+export const PrimaryButtonNoBoxShadow: Story = {
+  args: {
+    variant: 'primary',
+    textColor: 'white',
+    children: 'Button',
+    ariaLabel: 'ARIA-Label',
+    hasShadow: false,
+  },
+};
+
+export const OutlinedButtonNoBoxShadow: Story = {
+  args: {
+    variant: 'outlined',
+    textColor: 'primary',
+    children: 'Button',
+    ariaLabel: 'ARIA-Label',
+    hasShadow: false,
   },
 };
 

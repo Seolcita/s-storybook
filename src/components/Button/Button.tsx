@@ -28,7 +28,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: React.MouseEventHandler;
   margin?: setSpaceInput;
   hasShadow?: boolean;
-  borderRadius?: string;
+  borderRadius?: number;
   ariaLabel: string;
   type?: 'button' | 'submit' | 'reset';
 }
@@ -42,7 +42,7 @@ const Button = ({
   disabled = false,
   margin,
   hasShadow = true,
-  borderRadius = '0.5rem',
+  borderRadius,
   ariaLabel,
   onClick,
   type = 'submit',

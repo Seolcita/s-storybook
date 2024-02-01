@@ -7,6 +7,14 @@ import Modal from '../../../components/Modal';
 const meta: Meta<typeof Modal> = {
   title: 'Components/Atomic/Modal',
   component: Modal,
+  argTypes: {
+    isOpen: { control: { disable: true } },
+    onClose: { control: { disable: true } },
+    children: { control: { disable: true } },
+    ariaLabel: { control: { disable: true } },
+    width: { control: { disable: true } },
+    backdropColor: { control: { disable: true } },
+  },
 };
 
 export default meta;

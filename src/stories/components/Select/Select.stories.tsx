@@ -19,7 +19,7 @@ const Template: any = (args: any) => {
   const [value, setValue] = useState<SelectOption | undefined>();
 
   return (
-    <Box width={600} display='flex' justifyContent='center' alignItems='center'>
+    <Box width={500} display='flex' justifyContent='center' alignItems='center'>
       <Select
         {...args}
         value={value}
@@ -34,7 +34,7 @@ export const Default = Template.bind({});
 Default.args = {
   color: 'primary',
   width: 25,
-  fullWidth: true,
+  fullWidth: false,
 };
 
 export const FullWidth = Template.bind({});

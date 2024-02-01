@@ -20,7 +20,7 @@ export interface CardProps {
 
 const Card = ({
   isInteractive = false,
-  isPadded,
+  isPadded = true,
   tabIndex = 0,
   ariaLabel,
   width,

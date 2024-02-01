@@ -13,13 +13,14 @@ export const Container = styled.div<ContainerProps>`
   padding: ${({ $title }) => ($title ? '0.35rem 1.2rem' : '0.5rem')};
   background-color: ${({ $bgColor }) =>
     $bgColor ? ColorMap[$bgColor].main : 'black'};
+  position: relative;
 
   ${({ $title }) =>
     !$title &&
     css`
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: -0.7rem;
+      right: -0.7rem;
       width: 1.5rem;
       height: 1.5rem;
     `};

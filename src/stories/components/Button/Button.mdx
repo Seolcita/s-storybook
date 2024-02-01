@@ -5,7 +5,7 @@ import * as ButtonStories from './Button.stories.tsx';
 
 ## Overview
 
-Buttons allow users to take actions, and make choices, with a single click/tap.
+The Button component is a fundamental interface element that triggers a function when clicked. It is customizable with various properties such as bgColor for background color, textColor for the color of the text, size for the size of the button, disabled to enable or disable the button, hasShadow to add a shadow effect, and borderRadius to adjust the roundness of the button's corners. The component includes different variants like Primary and Outlined, which can be used in different contexts based on the user interface requirements.
 
 <Canvas>
   <Story of={ButtonStories.Primary} />
@@ -13,7 +13,16 @@ Buttons allow users to take actions, and make choices, with a single click/tap.
 
 ## Props
 
-<Controls include={['bgColor', 'textColor', 'size', 'disabled']} />
+<Controls
+  include={[
+    'bgColor',
+    'textColor',
+    'size',
+    'disabled',
+    'hasShadow',
+    'borderRadius',
+  ]}
+/>
 
 ## Variants
 
@@ -30,6 +39,20 @@ Buttons allow users to take actions, and make choices, with a single click/tap.
 <Canvas>
   <Story of={ButtonStories.PrimaryDisabled} />
   <Story of={ButtonStories.OutlinedDisabled} />
+</Canvas>
+
+### Box Shadow
+
+<Canvas>
+  <Story of={ButtonStories.PrimaryButtonNoBoxShadow} />
+  <Story of={ButtonStories.OutlinedButtonNoBoxShadow} />
+</Canvas>
+
+### Border Radius
+
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+  <Story of={ButtonStories.CustomBorderRadius} />
 </Canvas>
 
 ### Sizes

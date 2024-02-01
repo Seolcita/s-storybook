@@ -20,6 +20,7 @@ function storyDecorator(): Story {
           height={'4rem'}
           bgcolor={'lightgrey'}
           borderRadius={'50%'}
+          position={'relative'}
         >
           <Story />
         </Box>

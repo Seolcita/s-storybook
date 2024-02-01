@@ -1,19 +1,15 @@
 import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
-import * as Modal from './Modal.stories.tsx';
+import * as ModalStories from './Modal.stories.tsx';
 
 <Meta title='Components/Atomic/Modal' of={ModalStories} />
 
 ## Overview
 
-Modal can be easily adapted for different purposes like creating alert boxes, small floating windows, or image viewers.
+The Modal component is a dialog box or popup window that is displayed on top of the current page. It is used to provide important information, ask for user input, or feature additional details without leaving the current context. The Modal can be customized for various purposes such as creating alert boxes, small floating windows, or image viewers. It typically includes elements like a title, content, and action buttons. The Modal component's visibility can be controlled programmatically, allowing for a flexible user experience.
 
 <Canvas>
   <Story of={ModalStories.Default} />
 </Canvas>
-
-## Props
-
-<Controls include={[]} />
 
 ## Variants
 

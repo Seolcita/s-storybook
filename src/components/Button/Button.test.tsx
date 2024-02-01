@@ -17,7 +17,7 @@ const props: ButtonProps = {
   onClick: jest.fn(),
   margin: 'none',
   hasShadow: false,
-  borderRadius: '0.5rem',
+  borderRadius: 0.5,
   ariaLabel: 'test button',
   type: 'submit',
 };
