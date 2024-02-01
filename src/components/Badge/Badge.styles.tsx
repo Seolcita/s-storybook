@@ -20,13 +20,14 @@ export const StyledBadge = styled.div<ContainerProps>`
   position: absolute;
   top: -1rem;
   right: -1rem;
+  z-index: 10;
 
   ${({ $count }) =>
     !$count &&
     css`
-      top: -0.4rem;
-      right: -0.4rem;
-      width: 2rem;
-      height: 2rem;
+      top: 0rem;
+      right: 0rem;
+      width: 1.5rem;
+      height: 1.5rem;
     `};
 `;

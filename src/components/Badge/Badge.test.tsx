@@ -29,8 +29,8 @@ describe('Badge', () => {
     const badge = screen.getByTestId('badge');
 
     expect(badge).toBeInTheDocument();
-    expect(badge).toHaveStyle('width: 2rem');
-    expect(badge).toHaveStyle('height: 2rem');
+    expect(badge).toHaveStyle('width: 1.5rem');
+    expect(badge).toHaveStyle('height: 1.5rem');
   });
 
   it('renders with correct background color', () => {
