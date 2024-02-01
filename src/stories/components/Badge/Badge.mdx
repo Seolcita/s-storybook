@@ -13,7 +13,7 @@ The Badge component is a small, versatile element used to display numbers, statu
 
 ## Props
 
-<Controls include={['bgColor']} />
+<Controls include={['bgColor', 'count', 'maxCount']} />
 
 ## Variants
 
@@ -23,8 +23,14 @@ The Badge component is a small, versatile element used to display numbers, statu
   <Story of={BadgeStories.Default} />
 </Canvas>
 
-### Text
+### Count
 
 <Canvas>
-  <Story of={BadgeStories.Text} />
+  <Story of={BadgeStories.Count} />
+</Canvas>
+
+### Max Count
+
+<Canvas>
+  <Story of={BadgeStories.MaxCount} />
 </Canvas>

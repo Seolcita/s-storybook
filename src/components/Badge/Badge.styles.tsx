@@ -4,24 +4,29 @@ import { BadgeProps } from './Badge';
 
 export interface ContainerProps {
   $bgColor: BadgeProps['bgColor'];
-  $title: BadgeProps['title'];
+  $count: BadgeProps['count'];
 }
 
-export const Container = styled.div<ContainerProps>`
-  display: inline-block;
-  border-radius: ${({ $title }) => ($title ? '1.5rem' : '50%')};
-  padding: ${({ $title }) => ($title ? '0.35rem 1.2rem' : '0.5rem')};
-  background-color: ${({ $bgColor }) =>
-    $bgColor ? ColorMap[$bgColor].main : 'black'};
+export const Container = styled.div`
   position: relative;
+`;
 
-  ${({ $title }) =>
-    !$title &&
+export const StyledBadge = styled.div<ContainerProps>`
+  display: inline-block;
+  border-radius: ${({ $count }) => ($count ? '1.5rem' : '50%')};
+  padding: ${({ $count }) => ($count ? '0.5rem 1rem' : '0.5rem')};
+  background-color: ${({ $bgColor }) =>
+    $bgColor ? ColorMap[$bgColor].main : ColorMap['primary'].main};
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+
+  ${({ $count }) =>
+    !$count &&
     css`
-      position: absolute;
-      top: -0.7rem;
-      right: -0.7rem;
-      width: 1.5rem;
-      height: 1.5rem;
+      top: -0.4rem;
+      right: -0.4rem;
+      width: 2rem;
+      height: 2rem;
     `};
 `;
