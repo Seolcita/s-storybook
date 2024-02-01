@@ -59,3 +59,15 @@ export const NonInteractive: Story = {
     children: placeholder,
   },
 };
+
+export const NoBoxShadow: Story = {
+  args: {
+    isInteractive: false,
+    isPadded: true,
+    tabIndex: 0,
+    width: 35,
+    ariaLabel: 'ARIA-Label',
+    hasBoxShadow: false,
+    children: placeholder,
+  },
+};

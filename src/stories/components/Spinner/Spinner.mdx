@@ -1,14 +1,14 @@
 import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
-import * as Spinner from './Spinner.stories.tsx';
+import * as SpinnerStories from './Spinner.stories.tsx';
 
 <Meta title='Components/Atomic/Spinner' of={SpinnerStories} />
 
 ## Overview
 
-Spinner expresses an unspecified wait time.
+Spinner component is a visual indicator used to signify that a process is ongoing. It's typically used when a piece of content or a whole page is loading, and the completion time is unknown. The Spinner comes in different sizes such as Extra Small, Small, Medium, and Large, which can be used depending on the space available or the visual impact desired. This component helps to maintain user engagement during potentially long or uncertain wait times.
 
 <Canvas>
-  <Story of={SpinnerStories.Large} />
+  <Story of={SpinnerStories.ExtraSmall} />
 </Canvas>
 
 ## Props

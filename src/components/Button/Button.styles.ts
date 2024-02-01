@@ -44,7 +44,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   border: ${({ $variant, $textColor }) =>
     $variant === 'primary' ? 'none' : `0.25rem solid ${$textColor.main}`};
-  border-radius: ${({ $borderRadius }) => $borderRadius};
+  border-radius: ${({ $borderRadius }) =>
+    $borderRadius ? `${$borderRadius}rem` : '0.5rem'};
   color: ${({ $textColor }) => $textColor.main};
   box-shadow: ${({ $variant, $bgColor, $textColor, $hasShadow }) =>
     $hasShadow

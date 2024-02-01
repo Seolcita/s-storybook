@@ -62,7 +62,7 @@ type Story = StoryObj<typeof ImageStepsProgressBar>;
 export const Primary: Story = {
   args: {
     totalSteps: 6,
-    currentStep: 1,
+    currentStep: 3,
     prevImg,
     currentImg,
     nextImg,

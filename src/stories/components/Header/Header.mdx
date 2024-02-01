@@ -5,7 +5,7 @@ import * as HeaderStories from './Header.stories.tsx';
 
 ## Overview
 
-Header provides content and actions related to the current screen. It's used for branding, navigation, and actions.
+Header component serves as the topmost section of a webpage or application. It typically contains elements like the logo, navigation links, and possibly user account controls.
 
 <Canvas>
   <Story of={HeaderStories.Default} />
@@ -13,17 +13,7 @@ Header provides content and actions related to the current screen. It's used for
 
 ## Props
 
-<Controls
-  include={[
-    'isLogin',
-    'isMobile',
-    'bgColor',
-    'loginButton',
-    'logo',
-    'leftMenus',
-    'rightMenus',
-  ]}
-/>
+<Controls include={['isLogin', 'bgColor']} />
 
 ## Variants
 

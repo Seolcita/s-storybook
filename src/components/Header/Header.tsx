@@ -16,7 +16,7 @@ export interface HeaderProps {
   isLogin: boolean;
   isMobile?: boolean;
   bgColor?: Colors;
-  loginButton: React.ReactNode;
+  loginButton?: React.ReactNode;
 }
 
 const Header = ({

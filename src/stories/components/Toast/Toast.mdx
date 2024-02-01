@@ -1,11 +1,18 @@
 import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
-import * as Toast from './Toast.stories.tsx';
+import * as ToastStories from './Toast.stories.tsx';
 
-<Meta title='Components/Atomic/Badge' of={ToastStories} />
+<Meta title='Components/Atomic/Toast' of={ToastStories} />
 
 ## Overview
 
-Toast informs users of a process that an app has performed or will perform. They appear temporarily
+The Toast component is a small, non-blocking notification that appears to provide quick, at-a-glance feedback to the user. It can display different types of messages, such as success, error, or informational messages, based on the variant prop.<br />
+
+#### The Toast component automatically disappears after 4seconds, except for error messages which require manual dismissal.
+
+It includes an icon and a close
+button for manual dismissal. The message prop is used to specify the text displayed
+in the toast notification. This component is useful for providing feedback about
+an operation's result or status.
 
 <Canvas>
   <Story of={ToastStories.Error} />
@@ -13,17 +20,30 @@ Toast informs users of a process that an app has performed or will perform. They
 
 ## Props
 
-<Controls include={['Variant', 'message']} />
+<Controls include={['variant', 'message']} />
 
 ## Variants
 
 <br />
+### Error
+
+The Toast component requires manual dismissal
+
+<Canvas>
+  <Story of={ToastStories.Error} />
+</Canvas>
+
 ### Info
+
+The Toast component automatically disappears after 4seconds
+
 <Canvas>
   <Story of={ToastStories.Info} />
 </Canvas>
 
 ### Success
+
+The Toast component automatically disappears after 4seconds
 
 <Canvas>
   <Story of={ToastStories.Success} />
@@ -31,12 +51,8 @@ Toast informs users of a process that an app has performed or will perform. They
 
 ### Warning
 
-<Canvas>
-  <Story of={ToastStories.Waring} />
-</Canvas>
-
-### Error
+The Toast component automatically disappears after 4seconds
 
 <Canvas>
-  <Story of={ToastStories.Error} />
+  <Story of={ToastStories.Warning} />
 </Canvas>
