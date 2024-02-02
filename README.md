@@ -14,11 +14,13 @@ This includes usage examples, and prop definitions in each component.
 
 ## Viewing Storybook
 
-You can view Storybook and explore components in detail at [sk-storybook](https://sk-storybook.vercel.app/).
+You can view Storybook and explore components in detail at [sk-storybook app](https://sk-storybook.vercel.app/).
+<img width="1397" alt="Screen Shot 2024-02-01 at 4 53 57 PM" src="https://github.com/Seolcita/s-storybook/assets/83251839/32940ca0-6e8c-4c4b-8053-9695d6b99287">
+
 
 ## Install package
 
-Install the dependencies:
+Install the dependencies [sk-storybook npm](https://www.npmjs.com/package/sk-storybook)
 
 ```bash
 npm install sk-storybook
@@ -37,6 +39,3 @@ please feel free to open an issue on GitHub repository [sk-storybook github](htt
 
 This project is licensed under the ISC License
 
-## sk-storybook npm Package
-
-[sk-storybook npm](https://www.npmjs.com/package/sk-storybook)
