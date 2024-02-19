@@ -1,5 +1,5 @@
 export * from './Button';
-export * from './Card';
+export * from '../../../deprecated/Card';
 export * from './Color';
 export * from './Header';
 export * from './ImageStepsProgressBar';

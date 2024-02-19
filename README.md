@@ -1,6 +1,6 @@
 # Storybook Application
 
-This application uses [Storybook](https://storybook.js.org/) to develop, showcase, and document UI components for React with a strong focus on accessibility.
+This library uses [Storybook](https://storybook.js.org/) to develop, showcase, and document UI components for React with a strong focus on accessibility.
 Goal is to ensure that components are usable by everyone, adhering to best practices for accessibility.
 
 ## Accessibility Focus
@@ -17,10 +17,9 @@ This includes usage examples, and prop definitions in each component.
 You can view Storybook and explore components in detail at [sk-storybook app](https://sk-storybook.vercel.app/).
 <img width="1397" alt="Screen Shot 2024-02-01 at 4 53 57 PM" src="https://github.com/Seolcita/s-storybook/assets/83251839/32940ca0-6e8c-4c4b-8053-9695d6b99287">
 
-
 ## Install package
 
-Install the dependencies [sk-storybook npm](https://www.npmjs.com/package/sk-storybook)
+Install package [sk-storybook npm](https://www.npmjs.com/package/sk-storybook)
 
 ```bash
 npm install sk-storybook
@@ -38,4 +37,3 @@ please feel free to open an issue on GitHub repository [sk-storybook github](htt
 ## License
 
 This project is licensed under the ISC License
-
