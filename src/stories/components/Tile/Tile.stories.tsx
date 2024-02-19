@@ -1,17 +1,30 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Card from '../../../components/Card';
+import Tile from '../../../components/Tile';
 import Placeholder from '../../../utils/placeholder';
+import { Box } from '@mui/material';
 
-const meta: Meta<typeof Card> = {
-  title: 'Components/Atomic/Card',
-  component: Card,
+const meta: Meta<typeof Tile> = {
+  title: 'Components/Atomic/Tile',
+  component: Tile,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Card>;
+function storyDecorator(width: number): Story {
+  return {
+    decorators: [
+      (Story) => (
+        <Box width={`${width}rem`}>
+          <Story />
+        </Box>
+      ),
+    ],
+  };
+}
+
+type Story = StoryObj<typeof Tile>;
 
 const placeholder = <Placeholder isFullWidth color='warning' />;
 
@@ -69,5 +82,18 @@ export const NoBoxShadow: Story = {
     ariaLabel: 'ARIA-Label',
     hasBoxShadow: false,
     children: placeholder,
+  },
+};
+
+export const FullWidth: Story = {
+  ...storyDecorator(63),
+  args: {
+    isInteractive: false,
+    isPadded: true,
+    tabIndex: 0,
+    ariaLabel: 'ARIA-Label',
+    hasBoxShadow: false,
+    children: placeholder,
+    fullWidth: true,
   },
 };
