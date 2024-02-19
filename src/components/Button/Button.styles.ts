@@ -39,6 +39,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   background-color: ${({ $variant, $bgColor }) =>
     $variant === 'primary' ? $bgColor.main : 'transparent'};
 
@@ -56,9 +57,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   margin: ${({ $margin }) => $margin};
   padding: ${({ $size }) => $size.padding};
   font-size: ${({ $size }) => $size.fontSize};
-  height: ${({ $size }) => $size.heigh};
   font-weight: ${({ $size }) => $size.fontWeight};
-  line-height: ${({ $size }) => $size.lineHeight};
   letter-spacing: 0.03rem;
   overflow: hidden;
   transition: background-color 250ms ease;
