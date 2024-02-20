@@ -33,7 +33,3 @@ This package contains type definitions.
 
 Welcome and encourage feedbacks. If you have suggestions for improving components, especially in terms of enhancing accessibility,
 please feel free to open an issue on GitHub repository [sk-storybook github](https://github.com/Seolcita/s-storybook/issues).
-
-## License
-
-This project is licensed under the ISC License
