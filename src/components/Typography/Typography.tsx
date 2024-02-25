@@ -77,7 +77,7 @@ export const TypographyVariantMap: Record<
   textXS: typographyTokens.textXS,
 };
 
-const FontWeightMap: Record<FontWeight, number> = {
+export const FontWeightMap: Record<FontWeight, number> = {
   thin: typographyTokens.fontWeight.thin,
   extraLight: typographyTokens.fontWeight.extraLight,
   light: typographyTokens.fontWeight.light,
