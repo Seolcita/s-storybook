@@ -1,0 +1,57 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
+import * as SpanStories from './Span.stories.tsx';
+
+<Meta title='Components/Atomic/Span' of={SpanStories} />
+
+## Overview
+
+The Span component is a flexible, reusable text styling component in our library. It allows customization of text appearance through properties such as color, bgColor, fontWeight, fontSize, and isItalic. It can be used standalone or combined with other components to create complex UI elements.
+
+<Canvas>
+  <Story of={SpanStories.Default} />
+</Canvas>
+
+## Props
+
+<Controls
+  include={['text', 'color', 'bgColor', 'fontWeight', 'fontSize', 'isItalic']}
+/>
+
+## Variants
+
+<br />
+### Default
+
+<Canvas>
+  <Story of={SpanStories.Default} />
+</Canvas>
+
+### Text Color
+
+<Canvas>
+  <Story of={SpanStories.TextColor} />
+</Canvas>
+
+### Background Color
+
+<Canvas>
+  <Story of={SpanStories.BackgroundColor} />
+</Canvas>
+
+### Font Size
+
+<Canvas>
+  <Story of={SpanStories.FontSize} />
+</Canvas>
+
+### Font Weight
+
+<Canvas>
+  <Story of={SpanStories.FontWeight} />
+</Canvas>
+
+### Italic
+
+<Canvas>
+  <Story of={SpanStories.Italic} />
+</Canvas>
