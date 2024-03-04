@@ -13,3 +13,4 @@ export { default as Badge } from './Badge';
 export { default as Modal } from './Modal';
 export { default as Tile } from './Tile';
 export { default as Span } from './Span';
+export { default as CaptionedImage } from './CaptionedImage';

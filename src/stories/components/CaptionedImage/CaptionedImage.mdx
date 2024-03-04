@@ -1,0 +1,61 @@
+import { Controls, Story, Canvas, Meta } from '@storybook/addon-docs';
+import * as CaptionedImageStories from './CaptionedImage.stories.tsx';
+
+<Meta title='Components/Composite/CaptionedImage' of={CaptionedImageStories} />
+
+## Overview
+
+The CaptionedImage component is designed for displaying an image with an accompanying caption. It extends SpanProps to inherit properties for styling the text caption. The component allows for customization of several aspects, including the image's width, height, and border radius, as well as the layout's direction, alignment, and spacing through props like flexDirection, justifyContent, and alignItems. Additional features include the ability to adjust the margin around the image and apply a hover effect for interactive visual feedback.
+This component is ideal for creating engaging UI elements where images and text need to be presented together, such as in product cards, profile banners, or feature highlights, offering both aesthetic appeal and functional customization.
+
+<Canvas>
+  <Story of={CaptionedImageStories.Default} />
+</Canvas>
+
+## Props
+
+<Controls
+  include={[
+    'text',
+    'hasHoverEffect',
+    'width',
+    'height',
+    'flexDirection',
+    'justifyContent',
+    'alignItems',
+    'borderRadius',
+    'imgMarginRightPx',
+    'color',
+    'bgColor',
+    'fontWeight',
+    'fontSize',
+    'isItalic',
+  ]}
+/>
+
+## Variants
+
+<br />
+### Default
+
+<Canvas>
+  <Story of={CaptionedImageStories.Default} />
+</Canvas>
+
+### Hover Effect
+
+<Canvas>
+  <Story of={CaptionedImageStories.HasHoverEffect} />
+</Canvas>
+
+### Background Color
+
+<Canvas>
+  <Story of={CaptionedImageStories.BackgroundColor} />
+</Canvas>
+
+### Flex Direction
+
+<Canvas>
+  <Story of={CaptionedImageStories.FlexDirection} />
+</Canvas>
