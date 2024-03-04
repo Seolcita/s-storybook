@@ -41,6 +41,6 @@ export const Container = styled.div<ContainerProps>`
 
 export const ImageContainer = styled.div<ImageContainerProps>`
   margin: ${({ $imageMarginRight }) => `0 ${$imageMarginRight}rem 0 0`};
-  ${({ $flexDirection, $imageMarginRight }) =>
-    $flexDirection === 'column' && `margin: 0 0 ${$imageMarginRight}rem 0`};
+  ${({ $flexDirection, $imgMarginBottom }) =>
+    $flexDirection === 'column' && `margin: 0 0 ${$imgMarginBottom}rem 0`};
 `;
